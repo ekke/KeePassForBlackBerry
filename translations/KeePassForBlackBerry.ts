@@ -224,7 +224,7 @@ The key is wrong or the file is damaged.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../assets/main.qml" line="465"/>
+        <location filename="../assets/main.qml" line="469"/>
         <source>Select a key file.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -245,17 +245,17 @@ The key is wrong or the file is damaged.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../assets/main.qml" line="532"/>
+        <location filename="../assets/main.qml" line="539"/>
         <source>Settings</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../assets/main.qml" line="539"/>
+        <location filename="../assets/main.qml" line="546"/>
         <source>Done</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../assets/main.qml" line="561"/>
+        <location filename="../assets/main.qml" line="568"/>
         <source>Lockout Timer</source>
         <translation type="unfinished"></translation>
     </message>

@@ -94,6 +94,10 @@ public:
 	Q_SLOT void onLockStateChanged(bb::platform::DeviceLockState::Type newState);
 	Q_SLOT void onMinimize();
 	Q_SLOT void onFullScreen();
+
+	// added by ekke to change the pathes from QML
+	Q_INVOKABLE
+	bool isWorkPerimeter();
 signals:
 	void valueChanged(QString);
 	void lockChanged(bool);

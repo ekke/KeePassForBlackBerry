@@ -443,12 +443,16 @@ NavigationPane {
                         id: kdbFilePicker
                         type: FileType.Other
                         title: qsTr("Select KeePass database file.")
-                        directories: [ "/accounts/1000/shared/" ]
+                        // by ekke directories: [ "/accounts/1000/shared/" ]
+                        // in work perimeter its: [ "/accounts/1000-enterprise/shared/" ]
                         onCanceled: {
                             kdbPath.setSelectedIndex(-1);
                         }
                         onFileSelected: {
-                            var nice_path = selectedFiles[0].slice(15, selectedFiles[0].length);
+                            // changed by ekke
+                            // nice_path = selectedFiles[0].slice(15, selectedFiles[0].length);
+                            var n = selectedFiles[0].indexOf("shared/"); 
+                            var nice_path = selectedFiles[0].slice(n+7);
                             var newOption = selectedDatabaseOptionComponent.createObject();
                             kdbPath.add(newOption);
                             newOption.setText(nice_path);
@@ -463,12 +467,15 @@ NavigationPane {
                         id: kdbKeyFilePicker
                         type: FileType.Other
                         title: qsTr("Select a key file.")
-                        directories: [ "/accounts/1000/shared/" ]
+                        // by ekke directories: [ "/accounts/1000/shared/" ]
+                        // in work perimeter its: [ "/accounts/1000-enterprise/shared/" ]
                         onCanceled: {
                             kdbKeyPath.setSelectedOption(noKeyOption);
                         }
                         onFileSelected: {
-                            var nice_path = selectedFiles[0].slice(15, selectedFiles[0].length);
+                            // nice_path = selectedFiles[0].slice(15, selectedFiles[0].length);
+                            var n = selectedFiles[0].indexOf("shared/"); 
+                            var nice_path = selectedFiles[0].slice(n+7);
                             var newOption = selectedKeyFileOptionComponent.createObject();
                             kdbKeyPath.add(newOption);
                             newOption.setText(nice_path);
@@ -512,7 +519,7 @@ NavigationPane {
                         }
                     }
                 ] // end of attachedObjects list
-            } // End of Page
+            } // End of OpenDB Page
         },
         Sheet {
             id: settingsSheet
@@ -648,5 +655,17 @@ NavigationPane {
     
     function loadDatabaseSettings() {
         lockoutTimerSetting.setSelectedIndex(dbs.getDatabaseSettingFor("lockoutTimerSetting", "0"))
+    }
+    
+    onCreationCompleted: {
+        // added by ekke
+        if(dbs.isWorkPerimeter()){
+            kdbFilePicker.directories = ["/accounts/1000-enterprise/shared/"]
+            kdbKeyFilePicker.directories = ["/accounts/1000-enterprise/shared/"]
+        } else {
+            kdbFilePicker.directories = ["/accounts/1000/shared/"]
+            kdbKeyFilePicker.directories = ["/accounts/1000/shared/"]
+        }
+        
     }
 } // end of navigation

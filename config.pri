@@ -163,9 +163,40 @@ lupdate_inclusion {
              $$quote($$BASEDIR/../src/*.cc) \
              $$quote($$BASEDIR/../src/*.cpp) \
              $$quote($$BASEDIR/../src/*.cxx) \
+             $$quote($$BASEDIR/../src/crypto/*.c) \
+             $$quote($$BASEDIR/../src/crypto/*.c++) \
+             $$quote($$BASEDIR/../src/crypto/*.cc) \
+             $$quote($$BASEDIR/../src/crypto/*.cpp) \
+             $$quote($$BASEDIR/../src/crypto/*.cxx) \
+             $$quote($$BASEDIR/../src/lib/*.c) \
+             $$quote($$BASEDIR/../src/lib/*.c++) \
+             $$quote($$BASEDIR/../src/lib/*.cc) \
+             $$quote($$BASEDIR/../src/lib/*.cpp) \
+             $$quote($$BASEDIR/../src/lib/*.cxx) \
              $$quote($$BASEDIR/../assets/*.qml) \
              $$quote($$BASEDIR/../assets/*.js) \
-             $$quote($$BASEDIR/../assets/*.qs)
+             $$quote($$BASEDIR/../assets/*.qs) \
+             $$quote($$BASEDIR/../assets/720x720/*.qml) \
+             $$quote($$BASEDIR/../assets/720x720/*.js) \
+             $$quote($$BASEDIR/../assets/720x720/*.qs) \
+             $$quote($$BASEDIR/../assets/720x720/images/*.qml) \
+             $$quote($$BASEDIR/../assets/720x720/images/*.js) \
+             $$quote($$BASEDIR/../assets/720x720/images/*.qs) \
+             $$quote($$BASEDIR/../assets/768x1280/*.qml) \
+             $$quote($$BASEDIR/../assets/768x1280/*.js) \
+             $$quote($$BASEDIR/../assets/768x1280/*.qs) \
+             $$quote($$BASEDIR/../assets/768x1280/images/*.qml) \
+             $$quote($$BASEDIR/../assets/768x1280/images/*.js) \
+             $$quote($$BASEDIR/../assets/768x1280/images/*.qs) \
+             $$quote($$BASEDIR/../assets/XML/*.qml) \
+             $$quote($$BASEDIR/../assets/XML/*.js) \
+             $$quote($$BASEDIR/../assets/XML/*.qs) \
+             $$quote($$BASEDIR/../assets/images/*.qml) \
+             $$quote($$BASEDIR/../assets/images/*.js) \
+             $$quote($$BASEDIR/../assets/images/*.qs) \
+             $$quote($$BASEDIR/../assets/images/entry_icons/*.qml) \
+             $$quote($$BASEDIR/../assets/images/entry_icons/*.js) \
+             $$quote($$BASEDIR/../assets/images/entry_icons/*.qs)
 
     HEADERS +=  $$quote($$BASEDIR/../src/*.h) \
              $$quote($$BASEDIR/../src/*.h++) \

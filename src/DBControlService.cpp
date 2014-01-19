@@ -112,11 +112,13 @@ void DBControlService::unlock(
 {
 	if (filePath != QString("app/native/assets/testdb.kdb"))
 	{
-		filePath = QDir::currentPath() + "/../../" + filePath;
+		// removed by ekke filePath = QDir::currentPath() + "/../../" + filePath;
+		filePath = QDir::currentPath() + "/shared/" + filePath;
 	}
 
 	if (!keyFile.isNull() && !keyFile.isEmpty() && keyFile != "default") {
-		keyFile = QDir::currentPath() + "/../../" + keyFile;
+		// removed by ekke keyFile = QDir::currentPath() + "/../../" + keyFile;
+		keyFile = QDir::currentPath() + "/shared/" + keyFile;
 	}
 
 	// Check if key-file exists, if it does not, try loading database anyway.
@@ -384,4 +386,9 @@ void DBControlService::onFullScreen()
 {
 	this->mIsFullScreen = true;
 	this->cancelLockTimer();
+}
+
+// added: ekke
+bool DBControlService::isWorkPerimeter(){
+	return QDir::currentPath().contains("enterprise");
 }
